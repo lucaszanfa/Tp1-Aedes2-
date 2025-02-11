@@ -18,5 +18,6 @@ O desenvolvimento do projeto foi realizado nas seguintes linguagens:
 ##Estrutura do Repositório:
 
 -`src` - Contém os arquivos-fonte do projeto.
--` bin/` - Diretório padrão onde os arquivos compilados serão gerados.
+
+-`bin/` - Diretório padrão onde os arquivos compilados serão gerados.
 -`.vscode/settings.json` - Arquivo de configuração para personalizar a estrutura de pastas no VS Code.
