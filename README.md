@@ -1,18 +1,22 @@
-## Getting Started
+##Trabalho Prático 1 - AEDS 2
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+##Autor
 
-## Folder Structure
+Lucas Franco Zanforlim
 
-The workspace contains two folders by default, where:
+## Descrição
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Este repositório contém a solução do primeiro Trabalho Prático da disciplina de Algoritmos e Estruturas de Dados 2 (AEDs 2). O trabalho foi desenvolvido utilizando as linguagens Java e C, abordando conceitos essenciais da disciplina.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+##Linguagens Utilizadas
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+O desenvolvimento do projeto foi realizado nas seguintes linguagens:
 
-## Dependency Management
+- Java
+- C
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+##Estrutura do Repositório:
+
+-`src` - Contém os arquivos-fonte do projeto.
+-`bin/` - Diretório padrão onde os arquivos compilados serão gerados.
+-`.vscode/settings.json` - Arquivo de configuração para personalizar a estrutura de pastas no VS Code.
