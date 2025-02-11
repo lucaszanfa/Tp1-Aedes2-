@@ -1,6 +1,6 @@
-##Trabalho Prático 1 - AEDS 2
+## Trabalho Prático 1 - AEDS 2
 
-##Autor
+## Autor
 
 Lucas Franco Zanforlim
 
@@ -8,14 +8,14 @@ Lucas Franco Zanforlim
 
 Este repositório contém a solução do primeiro Trabalho Prático da disciplina de Algoritmos e Estruturas de Dados 2 (AEDs 2). O trabalho foi desenvolvido utilizando as linguagens Java e C, abordando conceitos essenciais da disciplina.
 
-##Linguagens Utilizadas
+## Linguagens Utilizadas
 
 O desenvolvimento do projeto foi realizado nas seguintes linguagens:
 
 - Java
 - C
 
-##Estrutura do Repositório:
+## Estrutura do Repositório:
 
 -`src` - Contém os arquivos-fonte do projeto.
 
