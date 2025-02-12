@@ -29,7 +29,6 @@ int main()
 
     do 
     {
-        printf("\nDigite uma palavra ou caractere, digite FIM caso queira sair do programa: ");
         fgets(str, sizeof(str), stdin);
         str[strcspn(str, "\n")] = '\0';
 
@@ -42,16 +41,15 @@ int main()
             resposta = ehpalindromo(str);
             if (resposta) 
             {
-                printf("\n%s eh um palindromo!\n", str);
+                printf("SIM\n");
             } 
             else 
             {
-                printf("\n%s nao eh um palindromo!\n", str);
+                printf("NAO\n");
             }
         }
     } while (ajuda);
 
-    printf("\nObrigado por Entrar!");
-
     return 0;
 }
+
