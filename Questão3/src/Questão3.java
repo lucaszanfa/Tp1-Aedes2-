@@ -1,30 +1,36 @@
-import java.util.Scanner;
+import java.util.*;
 
-class Ciframento {
-    public static String cesar(String entrada) {
-        StringBuilder cifrada = new StringBuilder();
+public class Questão3{
 
-        for (int i = 0; i < entrada.length(); i++) {
-            cifrada.append((char) (entrada.charAt(i) + 3));
+    public static String ciframentoCesar(String var){
+
+        String cesar = "";
+
+        for(int i = 0; i < var.length(); i++){
+            char caractere = var.charAt(i);
+            cesar += (char) (caractere + 3);
         }
 
-        return cifrada.toString();
+        return cesar;
     }
-}
 
-public class Questão3 {
-    public static void main(String[] args) {
-        Scanner leitor = new Scanner(System.in);
+    public static void main(String[] args){
         
-        String entrada = leitor.nextLine();
-        while (!entrada.equals("FIM")) { 
-            System.out.println(Ciframento.cesar(entrada));
-            entrada = leitor.nextLine(); 
+        Scanner scanner = new Scanner(System.in);
+        boolean continuar = true;  
+        while(continuar){
+            String linha = scanner.nextLine();
+            if(linha.equals("FIM")){  
+                continuar = false;  
+            } else {
+                System.out.println(ciframentoCesar(linha)); 
+            }
         }
-
-        leitor.close(); 
+    
+        scanner.close();
     }
 }
+
 
 
 
