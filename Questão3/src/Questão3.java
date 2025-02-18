@@ -13,16 +13,18 @@ public class Questão3 {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         
-        while (!leitor.nextLine().equals("FIM")) {
-            String entrada = leitor.nextLine();
-            
+        String entrada = leitor.nextLine();
+        while (!entrada.equals("FIM")) { 
             char[] caractere = entrada.toCharArray(); 
             int tamanho = caractere.length; 
 
             Ciframento.cesar(caractere, tamanho); 
+
+            entrada = leitor.nextLine(); 
         }
 
         leitor.close(); 
     }
 }
+
 
