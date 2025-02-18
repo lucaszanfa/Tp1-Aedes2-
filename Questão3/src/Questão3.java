@@ -1,11 +1,14 @@
 import java.util.Scanner;
 
 class Ciframento {
-    public static void cesar(char caractere[], int tamanho) {
-        for (int i = 0; i < tamanho; i++) { 
-            caractere[i] = (char) (caractere[i] + 3); 
+    public static String cesar(String entrada) {
+        StringBuilder cifrada = new StringBuilder();
+
+        for (int i = 0; i < entrada.length(); i++) {
+            cifrada.append((char) (entrada.charAt(i) + 3));
         }
-        System.out.println(new String(caractere)); 
+
+        return cifrada.toString();
     }
 }
 
@@ -15,16 +18,13 @@ public class Questão3 {
         
         String entrada = leitor.nextLine();
         while (!entrada.equals("FIM")) { 
-            char[] caractere = entrada.toCharArray(); 
-            int tamanho = caractere.length; 
-
-            Ciframento.cesar(caractere, tamanho); 
-
+            System.out.println(Ciframento.cesar(entrada));
             entrada = leitor.nextLine(); 
         }
 
         leitor.close(); 
     }
 }
+
 
 
