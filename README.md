@@ -8,4 +8,6 @@ Este repositório contém um conjunto de questões práticas resolvidas nas ling
 - **C** 🔵
 
 ## 🖊️ Autor
-Lucas Franco Zanforlim
+- **Nome**: Lucas Franco Zanforlim
+- **Email**: lucasfzanfa@gmail.com
+- **GitHub**: https://github.com/lucaszanfa
