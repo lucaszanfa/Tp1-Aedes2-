@@ -1,39 +1,33 @@
-class Palindromo {
-    public static boolean isFim(String s) {
-        boolean result = false;
-        if (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M') {
-            result = true;
+import java.util.*;
+
+public class Questão3{
+
+    public static String ciframentoCesar(String var){
+
+        String cesar = "";
+
+        for(int i = 0; i < var.length(); i++){
+            char caractere = var.charAt(i);
+            cesar += (char) (caractere + 3);
         }
-        return result;
+
+        return cesar;
     }
 
-    public static boolean isPalindromo(String s) {
-        boolean result = true;
-        int x = 0, y = 0;
+    public static void main(String[] args){
         
-        for (x = 0, y = s.length() - 1; x < s.length() / 2; x++, y--) {
-            if (s.charAt(x) != s.charAt(y)) {
-                result = false;
-                x = s.length();
+        Scanner scanner = new Scanner(System.in);
+        boolean continuar = true;  
+        while(continuar){
+            String linha = scanner.nextLine();
+            if(linha.equals("FIM")){  
+                continuar = false;  
+            } else {
+                System.out.println(ciframentoCesar(linha)); 
             }
         }
-        return result;
-    }
-
-    public static void Questão3(String[] args) {
-        MyIO.setCharset("UTF-8");
-        String entrada = "";
-
-        do {
-            entrada = MyIO.readLine();
-            if (!isFim(entrada)) {
-                if (isPalindromo(entrada)) {
-                    MyIO.println("SIM");
-                } else {
-                    MyIO.println("NAO");
-                }
-            }
-        } while (!isFim(entrada));
+    
+        scanner.close();
     }
 }
 
