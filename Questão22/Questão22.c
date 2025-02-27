@@ -1,31 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
-int somadigitosrec(int valor, int resposta)
+int somadigitosrec(char valor[], int indice, int soma)
 {
-    if(valor == 0)
+    if (valor[indice] != '\0') 
     {
-        resposta = 0;
+        soma += valor[indice] - '0'; 
+        soma = somadigitosrec(valor, indice + 1, soma); 
     }
-    else
-    {
-        resposta = valor % 10 + somadigitosrec(valor / 10, resposta);
-    }
-    return resposta;
-
-}
-
-int lervalor()
-{
-    int numero;
-    scanf("%i", &numero);
-    return numero;
+    return soma; 
 }
 
 int main()
 {
-    int valor = lervalor();
-    int resposta = somadigitosrec(valor, 0);
-    printf("\n%i", resposta);
+    char entrada[20];
+    bool continuar = true;
+
+    do
+    {
+        fgets(entrada, sizeof(entrada), stdin);
+        entrada[strcspn(entrada, "\n")] = '\0';
+
+        if (strcmp(entrada, "FIM") == 0)
+        {
+            continuar = false;
+        }
+        else
+        {
+            int resposta = somadigitosrec(entrada, 0, 0);
+            printf("%d\n", resposta);
+        }
+
+    } while (continuar);
 }
