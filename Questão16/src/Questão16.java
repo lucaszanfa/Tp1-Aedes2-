@@ -35,7 +35,7 @@ public class Questão16 {
                 if (resposta) {
                     System.out.println("SIM");
                 } else {
-                    System.out.println("NÃO");
+                    System.out.println("NAO");
                 }
             }
         } while (continuar);
