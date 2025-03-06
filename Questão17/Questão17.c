@@ -18,7 +18,7 @@ bool ehpalindromorec(char palavra[], int aux, int tamanho) {
 
 int main()
 {
-    char palavra[50];
+    char palavra[100];
     bool continuar = true;
     bool resposta;
     int tamanho;
