@@ -1,73 +1,63 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
-class ColocandoEmOrdem {
-    public static void ordenar(char[] vetor) {
-        int tamanho = vetor.length;
-        char aux;
-        for (int i = 0; i < tamanho; i++) {
-            for (int j = 0; j < tamanho - 1 - i; j++) {
-                if (vetor[j] > vetor[j + 1]) {
-                    aux = vetor[j + 1];
-                    vetor[j + 1] = vetor[j];
-                    vetor[j] = aux;
-                }
-            }
-        }
-    }
-}
-
-class Resolvendo {
-    public static boolean saoanagramas(String palavra1, String palavra2) {
-
-        palavra1 = palavra1.toLowerCase();
-        palavra2 = palavra2.toLowerCase();
-
-        char[] vetor1 = palavra1.toCharArray();
-        char[] vetor2 = palavra2.toCharArray();
-
-        ColocandoEmOrdem.ordenar(vetor1);
-        ColocandoEmOrdem.ordenar(vetor2);
-
-        boolean saoAnagramas = true;
-
-        if (vetor1.length != vetor2.length) {
-            saoAnagramas = false;
-        } else {
-            for (int i = 0; i < vetor1.length; i++) {
-                if (vetor1[i] != vetor2[i]) {
-                    saoAnagramas = false;
-                }
-            }
-        }
-
-        return saoAnagramas; 
-    }
-}
-
 public class Questão9 {
-    public static void main(String[] args) throws Exception {
-        Scanner leitor = new Scanner(System.in);
 
-        boolean continuar = true;
+    public static boolean Fim(String palavra){
 
-        while (continuar) {
+        boolean resultado = false; 
 
-            String palavra1 = leitor.nextLine();
-            String palavra2 = leitor.nextLine();
+        if(palavra.length() == 3 && palavra.charAt(0) == 'F' && palavra.charAt(1) == 'I' && palavra.charAt(2) == 'M'){
+            resultado = true;
+        }
 
-            if (palavra1.equalsIgnoreCase("FIM")) {
-                continuar = false;
-            } else {
-                boolean resposta = Resolvendo.saoanagramas(palavra1, palavra2);
-                if (resposta) {
+        return resultado;
+    }
+
+    public static boolean anagrama(String palavra, String aux) {
+
+        boolean resultado = false;
+
+        if (palavra.length() != aux.length()) { //verificando se tem msm tamanho
+            return false; 
+        }
+
+        char[] arrayPalavra = palavra.toCharArray();  //transformando as strings em vetores, pois me java as strings sao imutaveis
+        char[] arrayAux = aux.toCharArray();
+
+        Arrays.sort(arrayPalavra); //organizando os vetores em uma msm ordem, aq no caso a alfabetica
+        Arrays.sort(arrayAux);
+
+        if(Arrays.equals(arrayPalavra, arrayAux)){ //se forem iguais dps de ordenados sao anagramas
+            resultado = true;
+        }
+
+        return resultado;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (scanner.hasNextLine()) {  
+            String entrada = scanner.nextLine().trim(); 
+            if (Fim(entrada)) {
+                break;  
+            }
+
+            String[] palavras = entrada.split(" - "); // Divide as palavras pelo separador " - "
+            if (palavras.length == 2) {  
+                String palavra1 = palavras[0].trim(); 
+                String palavra2 = palavras[1].trim(); 
+
+                if (anagrama(palavra1, palavra2)) {
                     System.out.println("SIM");
                 } else {
-                    System.out.println("NÃO");
+                    System.out.println("NAO");
                 }
             }
         }
 
-        leitor.close();
+        scanner.close();
     }
 }
 
