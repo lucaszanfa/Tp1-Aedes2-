@@ -52,7 +52,7 @@ public class Questão9 {
                 if (anagrama(palavra1, palavra2)) {
                     System.out.println("SIM");
                 } else {
-                    System.out.println("NAO");
+                    System.out.println("NÃO");
                 }
             }
         }
